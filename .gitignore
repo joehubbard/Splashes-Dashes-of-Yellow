@@ -18,3 +18,20 @@ web/.htaccess
 # Composer
 vendor/*
 !vendor/.gitkeep
+
+# NPM
+node_modules
+
+# Local - Flywheel
+sql
+
+# Other
+web/app/ewww
+
+#PHPStorm
+web/.idea
+.idea
+
+.DS_Store
+
+/config/application.php
