@@ -24,9 +24,18 @@ class StarterSite extends TimberSite {
 		add_theme_support( 'html5', array( 'comment-list', 'comment-form', 'search-form', 'gallery', 'caption' ) );
 		add_filter( 'timber_context', array( $this, 'add_to_context' ) );
 		add_filter( 'get_twig', array( $this, 'add_to_twig' ) );
+		add_filter('style_loader_src', array($this, 'remove_wp_ver_css_js'), 9999 );
+		add_filter('script_loader_src', array($this, 'remove_wp_ver_css_js'), 9999 );
 		add_action( 'init', array( $this, 'register_post_types' ) );
 		add_action( 'init', array( $this, 'register_taxonomies' ) );
+		add_action('wp_enqueue_scripts', array($this, 'wp_enq_style_scripts'));
 		parent::__construct();
+	}
+
+	// Enqueue custom styles and scripts in one place
+	function wp_enq_style_scripts() {
+		wp_enqueue_style('css', get_template_directory_uri().'/assets/css/app.css');
+		wp_enqueue_script('js', get_template_directory_uri().'/assets/js/app.js', array(), '', true);
 	}
 
 	function register_post_types() {
@@ -35,6 +44,13 @@ class StarterSite extends TimberSite {
 
 	function register_taxonomies() {
 		//this is where you can register custom taxonomies
+	}
+
+	function remove_wp_ver_css_js( $src ) {
+    if ( strpos( $src, 'ver=' ) ) {
+      $src = remove_query_arg( 'ver', $src );
+		}
+    return $src;
 	}
 
 	function add_to_context( $context ) {

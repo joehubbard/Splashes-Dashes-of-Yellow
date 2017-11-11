@@ -1677,3 +1677,7 @@ pre code {
     margin-left: 91.66666667%;
   }
 }
+
+body {
+  background-color: red;
+}
