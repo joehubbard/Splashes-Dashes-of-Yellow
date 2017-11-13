@@ -2,12 +2,20 @@
 @import "bootstrap/variables";
 @import "bootstrap/mixins";
 
+@import "modules/config";
+@import "modules/mixins";
+
 // Optional
 @import "bootstrap/reboot";
 @import "bootstrap/type";
 @import "bootstrap/images";
 @import "bootstrap/code";
 @import "bootstrap/grid";
+@import "bootstrap/normalize";
 
 // Custom SCSS
+@import "partials/slick";
 @import "partials/header";
+@import "partials/slider";
+@import "partials/large_content_block";
+@import "partials/footer";

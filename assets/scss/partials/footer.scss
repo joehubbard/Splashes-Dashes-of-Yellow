@@ -1,0 +1,51 @@
+footer{
+  p{
+    color: rgba(245, 245, 245, 1);
+    font-size: 12px;
+    line-height: 34px;
+    margin-bottom: 0;
+  }
+  a{
+    color: rgba(245, 245, 245, 1);
+    font-weight: 600;
+    &:hover{
+      color: rgba(245, 245, 245, 0.8);
+      text-decoration: none;
+    }
+  }
+  .footer{
+    background-color: $blue;
+  }
+  .subfooter{
+    background-color: $dark_blue;
+    position: relative;
+    &:before{
+      content:"";
+      background-image: url(../images/leafs.png);
+      height: 45px;
+      width: 180px;
+      background-size: contain;
+      background-position: center;
+      position: absolute;
+      right: 0;
+      bottom: 0;
+    }
+    .left, .right{
+      padding: 0px;
+      text-align: center;
+      @include mobile{
+        padding: 15px;
+      }
+    }
+    .left{
+      @include mobile{
+        text-align: left;
+      }
+    }
+    .right{
+      @include mobile{
+        text-align: right;
+      }
+    }
+  }
+}

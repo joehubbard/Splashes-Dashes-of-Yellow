@@ -44,16 +44,12 @@ mix.setPublicPath(assetsPath);
 mix.setResourceRoot('../');
 
 mix.scripts([
-        `node_modules/jquery/dist/jquery.min.js`,
-        `node_modules/jquery-match-height/dist/jquery.matchHeight-min.js`,
-        `node_modules/jquery-form/dist/jquery.form.min.js`,
-        `node_modules/jquery-ui-bundle/jquery-ui.min.js`,
-        `web/app/wp/wp-includes/js/wp-embed.js`,
-        `${resources}/js/custom/polyfill.js`,
-        `node_modules/slick-carousel/slick/slick.min.js`,
-        `node_modules/basicscroll/dist/basicScroll.min.js`,
-        `web/app/mu-plugins/contact-form-7/includes/js/scripts.js`,
-        `web/app/mu-plugins/wp-charts/js/functions.js`,
+  `node_modules/jquery/dist/jquery.min.js`,
+  `node_modules/jquery-match-height/dist/jquery.matchHeight-min.js`,
+  `node_modules/jquery-form/dist/jquery.form.min.js`,
+  `node_modules/jquery-ui-bundle/jquery-ui.min.js`,
+  `node_modules/slick-carousel/slick/slick.min.js`,
+  `node_modules/basicscroll/dist/basicScroll.min.js`,
         `${resources}/js/**/*.js`
       ], `${assetsPath}/js/app.js`);
 
