@@ -21,6 +21,7 @@ class StarterSite extends TimberSite {
 		add_theme_support( 'post-formats' );
 		add_theme_support( 'post-thumbnails' );
 		add_theme_support( 'menus' );
+		add_action('after_setup_theme', array($this, 'register_menus'));
 		add_theme_support( 'html5', array( 'comment-list', 'comment-form', 'search-form', 'gallery', 'caption' ) );
 		add_filter( 'timber_context', array( $this, 'add_to_context' ) );
 		add_filter( 'get_twig', array( $this, 'add_to_twig' ) );
@@ -37,6 +38,13 @@ class StarterSite extends TimberSite {
 		wp_deregister_script('jquery');
 		wp_enqueue_style('css', get_template_directory_uri().'/assets/css/app.css');
 		wp_enqueue_script('js', get_template_directory_uri().'/assets/js/app.js', array());
+	}
+
+	function register_menus(){
+		register_nav_menus( array(
+			'main' => 'Main Menu',
+			'main_mobile' => 'Main Menu Mobile',
+		));
 	}
 
 	function register_post_types() {
@@ -58,8 +66,12 @@ class StarterSite extends TimberSite {
 		$context['foo'] = 'bar';
 		$context['stuff'] = 'I am a value set in your functions.php file';
 		$context['notes'] = 'These values are available everytime you call Timber::get_context();';
-		$context['menu'] = new TimberMenu();
+		$context['main'] = new TimberMenu('main');
+		$context['main_mobile'] = new TimberMenu('main_mobile');
 		$context['site'] = $this;
+		if ( is_front_page() ) {
+			$context['front_page_title'] = get_field('title');
+		}
 		return $context;
 	}
 

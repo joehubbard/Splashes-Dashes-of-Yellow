@@ -1,0 +1,126 @@
+.logo{
+    padding: 20px 0px;
+    display: inline-block;
+    img{
+        max-height: 50px;
+    }
+}
+.mob-nav-icon{
+    a{
+        text-decoration: none;
+    }
+    display: inline-block;
+    width: 36px;
+    height: 32px;
+    float: right;
+    margin: 29px 0px;
+    span{
+        height: 4px;
+        width: 100%;
+        background-color: darken($dark_blue, 15%);
+        border-radius: 1px;
+        display: block;
+        position: relative;
+        transition: 200ms ease-in-out;
+        transform-origin: center;
+        &:nth-child(1){
+            top: 0;
+        }
+        &:nth-child(2){
+            top: 10px;
+            left: 0;
+            opacity: 1;
+        }
+        &:nth-child(3){
+            top: 20px;
+        }
+    }
+    &.active{
+        span{
+            &:nth-child(1){
+                transform: rotate(45deg);
+                top: 14px;
+            }
+            &:nth-child(2){
+                left: -35px;
+                opacity: 0;
+            }
+            &:nth-child(3){
+                transform: rotate(-45deg);
+                top: 6px;
+            }
+        }
+    }
+    @include tablet{
+        display: none;
+    }
+}
+.mob-nav{
+    a{
+        text-decoration: none;
+    }
+    display: none;
+    ul{
+        margin-bottom: 0;
+        list-style-type: none;
+        padding-left: 0;
+        a{
+            text-decoration: none;
+        }
+        li{
+            letter-spacing: 2px;
+            padding: 10px 0px;
+            color: $blue;
+            font-size: 16px;
+            line-height: 30px;
+            border-bottom: 1px solid #67a2b6;
+            i{
+                margin-right: 20px;
+            }
+        }
+    }
+}
+.desktop-nav{
+    display: none;
+    float: right;
+    line-height: 90px;
+    z-index: 2;
+    position: relative;
+    @include tablet{
+        display: inline-block;
+    }
+    ul{
+        text-align: right;
+        margin-bottom: 0;
+        li{
+            display: inline-block;
+            margin-right: 30px;
+            transition: all 0.3s ease-in-out;
+            letter-spacing: 1.2px;
+            position: relative;
+            z-index: -1;
+            color: #fff;
+            text-shadow: 0px 1px 2px rgba(100, 100, 100, 1);
+            &:hover{
+                background-color:  rgba(155,194,207,1);
+            }
+            &.active{
+                &:before{
+                    content: " ";
+                    width: 100%;
+                    background-color: $dark_blue;
+                    height: 5px;
+                    position: absolute;
+                    bottom: 0;
+                }
+            }
+        }
+    }
+}
+.mob-nav-container{
+    width: 100%;
+}
+header{
+    background: -webkit-linear-gradient(left, lightblue 0%, #CDE7F0 100%);
+    position: relative;
+}

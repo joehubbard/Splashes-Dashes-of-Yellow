@@ -19,8 +19,6 @@
       position: relative;
       z-index: 0;
       overflow: auto;
-      -webkit-filter: blur(5px); /* Safari */
-      filter: blur(4px);
       transform: scale(1.05);
     }
   &__header{

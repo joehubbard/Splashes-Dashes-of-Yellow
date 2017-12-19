@@ -39,7 +39,8 @@
     "johnpbloch/wordpress": "4.8.3",
     "oscarotero/env": "^1.1.0",
     "roots/wp-password-bcrypt": "1.0.0",
-    "wpackagist-plugin/timber-library": "^1.4"
+    "wpackagist-plugin/timber-library": "^1.4",
+    "wpackagist-plugin/advanced-custom-fields": "^4.4.11"
   },
   "require-dev": {
     "squizlabs/php_codesniffer": "^3.0.2"

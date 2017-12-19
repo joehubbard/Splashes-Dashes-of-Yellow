@@ -4,6 +4,9 @@
 
 @import "modules/config";
 @import "modules/mixins";
+@import "modules/typography";
+@import "modules/colours";
+@import "../../node_modules/font-awesome/scss/font-awesome.scss";
 
 // Optional
 @import "bootstrap/reboot";
@@ -17,5 +20,5 @@
 @import "partials/slick";
 @import "partials/header";
 @import "partials/slider";
-@import "partials/large_content_block";
+@import "partials/large-content-block";
 @import "partials/footer";
