@@ -6,7 +6,7 @@ const imageminPngquant = require('imagemin-pngquant');
 const resources = 'assets';
 const themePath = 'web/app/themes/SaDoY';
 const assetsPath = 'web/app/themes/SaDoY/assets';
-const devSite = 'sadoy.dev';
+const devSite = 'sadoy.local';
 
 /*
  |--------------------------------------------------------------------------
